@@ -1,0 +1,36 @@
+button{
+    width: 100px;
+    height: 70px;
+}
+.squelette{
+    border: solid black 2px;
+    height: 90vh;
+    width: 700px;
+    margin: 10px;
+}
+
+.rang{
+    display: flex;
+    justify-content: center;
+}
+
+.ecran{
+    border: solid black 5px;
+    height: 20vh;
+    width: 600px;
+    margin-bottom: 20px;
+    margin: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.col-4{
+    border: solid black 2px;
+    height: 10vh;
+    width: 100px;
+    margin: 20px;
+}
+.col-4:hover{
+    background-color: gray;
+}
