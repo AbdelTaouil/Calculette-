@@ -1,7 +1,6 @@
 // contour
 
 let myBody = document.querySelector('body');
-
 let squeDiv = document.createElement("div");
 squeDiv.className = 'squelette'
 myBody.appendChild(squeDiv)
@@ -10,8 +9,23 @@ myBody.appendChild(squeDiv)
 // // ecran
 
 let ecranDiv = document.createElement('input')
+
 ecranDiv.className = 'ecran'
+// ecranDiv.setAttribute('type',"number")
+console.log(ecranDiv);
 squeDiv.appendChild(ecranDiv)
+
+let ecranDiv1 = document.createElement('input')
+console.log(ecranDiv1);
+ecranDiv1.className = 'ecran1'
+// ecranDiv1.setAttribute('type',"number")
+squeDiv.appendChild(ecranDiv1)
+
+let ecranDiv2 = document.createElement('input')
+console.log(ecranDiv2);
+ecranDiv2.className = 'ecran2'
+// ecranDiv2.setAttribute('type',"number")
+squeDiv.appendChild(ecranDiv2)
 
 
 // container
@@ -20,6 +34,10 @@ let myContainer = document.createElement("div");
 myContainer.className = 'container';
 squeDiv.appendChild(myContainer);
 myContainer.appendChild(ecranDiv);
+myContainer.appendChild(ecranDiv1);
+myContainer.appendChild(ecranDiv2);
+
+
 
 // les rangs
 
@@ -74,6 +92,8 @@ mySupp.textContent="C"
 let myEga =document.createElement("button")
 myEga.textContent="="
 
+let tabOpe= [myPlus,myMoins,myD,myX,mySupp]
+
 // rang 1
 
 mybtn1.className = 'col-4';
@@ -85,7 +105,7 @@ rang1 .appendChild(mybtn2);
 mybtn3.className = 'col-4';
 rang1.appendChild(mybtn3);
 
-myPlus.className = 'col-4';
+myPlus.className = 'colo-4';
 rang1.appendChild(myPlus);
 
 // rang 2
@@ -100,7 +120,7 @@ mybtn6.className = 'col-4';
 rang2.appendChild(mybtn6);
 
 
-myMoins.className = 'col-4';
+myMoins.className = 'colo-4';
 rang2.appendChild(myMoins);
 
 
@@ -116,21 +136,99 @@ rang3.appendChild(mybtn8);
 mybtn9.className = 'col-4';
 rang3.appendChild(mybtn9);
 
-myD.className = 'col-4';
+myD.className = 'colo-4';
 rang3.appendChild(myD);
 
 //  rang 5
 
-mySupp.className = 'col-4';
+mySupp.className = 'colc-4';
 rang4 .appendChild(mySupp);
 
 mybtn0.className = 'col-4';
 rang4.appendChild(mybtn0);
 
-myEga.className = 'col-4';
+myEga.className = 'cole-4';
 rang4.appendChild(myEga);
 
-myX.className = 'col-4';
+myX.className = 'colo-4';
 rang4.appendChild(myX);
 
+// mon tableau 
 
+let tabNum = [mybtn0,mybtn1,mybtn2,mybtn3,mybtn4,mybtn5,mybtn6,mybtn7,mybtn8,mybtn9]
+
+
+// l'operation
+
+
+let choix;
+
+ecranDiv.addEventListener('click',()=>{
+    choix = true
+    console.log(choix);
+})
+ecranDiv1.addEventListener('click',()=>{
+    choix = true
+    console.log(choix);
+})
+ecranDiv2.addEventListener('click',()=>{
+    choix = true
+    console.log(choix);
+})
+
+tabOpe.forEach(elem => {
+    elem.addEventListener('click',()=>{
+        ecranDiv1.value += elem.innerText
+        console.log(ecranDiv1.innerText);
+        choix = false
+        console.log(choix);
+    })
+});
+
+tabNum.forEach(element => {
+    element.addEventListener('click',()=>{
+        if (choix) {
+            ecranDiv.value += element.innerText
+            ecranDiv.textContent += element.innerText
+            console.log(ecranDiv.innerText);
+                
+        } else{
+            ecranDiv2.value += element.innerText
+            ecranDiv2.textContent += element.innerText
+            console.log(ecranDiv2.innerText);
+        }
+    })
+});
+
+
+let resultat;
+
+myEga.addEventListener('click',()=>{
+    if(ecranDiv1.value=="+"){
+        resultat= parseInt(ecranDiv.value)+parseInt(ecranDiv2.value)
+        ecranDiv2.value=""
+        ecranDiv1.value=""
+        ecranDiv.value= resultat
+    } else if(ecranDiv1.value=="-"){
+        resultat= parseInt(ecranDiv.value)-parseInt(ecranDiv2.value)
+        ecranDiv2.value=""
+        ecranDiv1.value=""
+        ecranDiv.value= resultat
+    } else if(ecranDiv1.value=="/"){
+        resultat= parseInt(ecranDiv.value)/parseInt(ecranDiv2.value)
+        ecranDiv2.value=""
+        ecranDiv1.value=""
+        ecranDiv.value= resultat
+    } else if(ecranDiv1.value=="*"){
+        resultat= parseInt(ecranDiv.value)*parseInt(ecranDiv2.value)
+        ecranDiv2.value=""
+        ecranDiv1.value=""
+        ecranDiv.value= resultat
+    }
+})
+
+mySupp.addEventListener('click',()=>{
+    ecranDiv2.value=""
+    ecranDiv1.value=""
+    ecranDiv.value=""
+})

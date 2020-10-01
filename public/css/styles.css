@@ -7,6 +7,7 @@ button{
     height: 90vh;
     width: 700px;
     margin: 10px;
+    background-color: black;
 }
 
 .rang{
@@ -15,22 +16,72 @@ button{
 }
 
 .ecran{
-    border: solid black 5px;
-    height: 20vh;
+    margin-top: 20px;
+    border: white;
+    height: 8vh;
     width: 600px;
-    margin-bottom: 20px;
-    margin: 20px;
+    
+    
 }
+.ecran1{
+    border: white;
+    height: 8vh;
+    width: 600px;
+
+}
+.ecran2{
+    border: white;
+    height: 8vh;
+    width: 600px;
+
+}
+
 .container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .col-4{
     border: solid black 2px;
     height: 10vh;
     width: 100px;
     margin: 20px;
+    font-size: 25px;
 }
 .col-4:hover{
+    background-color: gray;
+}
+.colc-4{
+    border: solid black 2px;
+    background-color: red;
+    height: 10vh;
+    width: 100px;
+    margin: 20px;
+    font-size: 25px;
+}
+.colc-4:hover{
+    background-color: gray;
+}
+.cole-4{
+    border: solid black 2px;
+    background-color: green;
+    height: 10vh;
+    width: 100px;
+    margin: 20px;
+    font-size: 25px;
+}
+.cole-4:hover{
+    background-color: gray;
+}
+.colo-4{
+    border: solid black 2px;
+    background-color: blue;
+    height: 10vh;
+    width: 100px;
+    margin: 20px;
+    font-size: 25px;
+}
+.colo-4:hover{
     background-color: gray;
 }
